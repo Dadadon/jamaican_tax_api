@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     post 'nis/batch', to: 'nis#calculate_batch_nis'
     post 'nht/batch', to: 'nht#calculate_batch_nht'
     post 'et/batch', to: 'et#calculate_batch_et'
+    post 'consolidated_taxes', to: 'consolidated_taxes#calculate_all_taxes'
   end  
 end
