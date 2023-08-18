@@ -1,8 +1,12 @@
 class Calculate::ConsolidatedTaxesController < ApplicationController
   def calculate_all_taxes
-    batch_data = params[:batch_data]
-    income_frequency = params[:income_frequency].to_sym
-    tax_year = params[:tax_year].to_i
+    # batch_data = params[:batch_data]
+    # income_frequency = params[:income_frequency].to_sym
+    # tax_year = params[:tax_year].to_i
+
+    batch_data = validate_batch_data(params[:batch_data])
+    income_frequency = validate_income_frequency(params[:income_frequency].to_sym)
+    tax_year = validate_tax_year(params[:tax_year].to_i)
 
     consolidated_results = calculate_consolidated_taxes(batch_data, income_frequency, tax_year)
 
@@ -10,6 +14,28 @@ class Calculate::ConsolidatedTaxesController < ApplicationController
   end
 
   private
+
+  def validate_batch_data(batch_data)
+    # Implement batch data validation logic here
+    # Example: Ensure batch data is an array of valid numeric values
+    raise ArgumentError, "Invalid batch data" unless batch_data.is_a?(Array) && batch_data.all? { |val| val.is_a?(Numeric) }
+    batch_data
+  end
+
+  def validate_income_frequency(income_frequency)
+    # Implement income frequency validation logic here
+    # Example: Ensure income frequency is one of the allowed values
+    allowed_frequencies = [:weekly, :fortnightly, :monthly, :annually]
+    raise ArgumentError, "Invalid income frequency" unless allowed_frequencies.include?(income_frequency.to_sym)
+    income_frequency.to_sym
+  end
+
+  def validate_tax_year(tax_year)
+    # Implement tax year validation logic here
+    # Example: Ensure tax year is a valid positive integer
+    raise ArgumentError, "Invalid tax year" unless tax_year.to_i.positive?
+    tax_year.to_i
+  end
 
   def calculate_consolidated_taxes(batch_data, income_frequency, tax_year)
     consolidated_results = []
