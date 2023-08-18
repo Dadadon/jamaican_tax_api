@@ -16,7 +16,8 @@ class Calculate::IncomeTaxController < ApplicationController
   
     def calculate_batch_income_tax(batch_data, income_frequency, tax_year)
       batch_data.map do |income|
-        tax_amount = calculate_income_tax(income.to_f, income_frequency, tax_year)
+        statutory_income = income.to_f - (income.to_f * 0.03)
+        tax_amount = calculate_income_tax(statutory_income.to_f, income_frequency, tax_year)
         { income: income, tax_amount: tax_amount }
       end
     end

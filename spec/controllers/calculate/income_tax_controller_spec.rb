@@ -16,10 +16,10 @@ RSpec.describe Calculate::IncomeTaxController, type: :controller do
       expect(batch_results.length).to eq(3)
 
       expect(batch_results[0]['income'].to_i).to eq(200000)
-      expect(batch_results[0]['tax_amount'].to_i).to eq(18750)
+      expect(batch_results[0]['tax_amount'].to_i).to eq(17250)
 
       expect(batch_results[1]['income'].to_i).to eq(150000)
-      expect(batch_results[1]['tax_amount'].to_i).to eq(6250)
+      expect(batch_results[1]['tax_amount'].to_i).to eq(5125)
 
       expect(batch_results[2]['income'].to_i).to eq(100000)
       expect(batch_results[2]['tax_amount'].to_i).to eq(0)

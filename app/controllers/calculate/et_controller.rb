@@ -12,7 +12,8 @@ class Calculate::EtController < ApplicationController
   
     def calculate_batch_et_amount(batch_data, et_rate)
       batch_data.map do |income|
-        et_amount = income.to_f * et_rate
+        statutory_income = income.to_f - (income.to_f * 0.03)
+        et_amount = statutory_income.to_f * et_rate
         { income: income, et_amount: et_amount }
       end
     end
