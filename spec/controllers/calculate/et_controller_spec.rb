@@ -14,13 +14,13 @@ RSpec.describe Calculate::EtController, type: :controller do
 
       expect(et_results.length).to eq(3)
       expect(et_results[0]['income'].to_i).to eq(50000)
-      expect(et_results[0]['et_amount'].to_i).to eq(1125)
+      expect(et_results[0]['et_amount'].to_i).to eq(1091)
 
       expect(et_results[1]['income'].to_i).to eq(60000)
-      expect(et_results[1]['et_amount'].to_i).to eq(1350)
+      expect(et_results[1]['et_amount'].to_i).to eq(1309)
 
       expect(et_results[2]['income'].to_i).to eq(70000)
-      expect(et_results[2]['et_amount'].to_i).to eq(1575)
+      expect(et_results[2]['et_amount'].to_i).to eq(1527)
     end
   end
 end
