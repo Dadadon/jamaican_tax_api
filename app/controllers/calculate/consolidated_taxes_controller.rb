@@ -18,7 +18,7 @@ class Calculate::ConsolidatedTaxesController < ApplicationController
       nis_amount = calculate_nis(income.to_f)
       statutory_income = income.to_f - nis_amount.to_f
       income_tax = calculate_income_tax(statutory_income, income_frequency, tax_year)
-      et_amount = calculate_et(income.to_f)
+      et_amount = calculate_et(statutory_income)
       nht_amount = calculate_nht(income.to_f)
 
       consolidated_results << {
