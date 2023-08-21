@@ -109,6 +109,7 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.3-x64-mingw-ucrt)
       racc (~> 1.4)
+    pg (1.5.3-x64-mingw-ucrt)
     puma (5.6.6)
       nio4r (~> 2.0)
     racc (1.7.1)
@@ -167,7 +168,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.12.1)
-    sqlite3 (1.6.3-x64-mingw-ucrt)
+    secure_headers (6.5.0)
     thor (1.2.2)
     timeout (0.4.0)
     tzinfo (2.0.6)
@@ -185,12 +186,13 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  pg
   puma (~> 5.0)
   rack-attack
   rack-cors
   rails (~> 7.0.6)
   rspec-rails (~> 4.0)
-  sqlite3 (~> 1.4)
+  secure_headers
   tzinfo-data
 
 RUBY VERSION
