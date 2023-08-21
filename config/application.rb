@@ -11,7 +11,6 @@ module JamaicanTaxApi
     # Initialize configuration defaults for originally generated Rails version.
     config.middleware.use Rack::Attack
     config.load_defaults 7.0
-    config.assets.enabled = false
 
     # Configuration for the application, engines, and railties goes here.
     #
