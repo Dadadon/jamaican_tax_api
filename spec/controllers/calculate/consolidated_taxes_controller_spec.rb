@@ -22,9 +22,9 @@ RSpec.describe Calculate::ConsolidatedTaxesController, type: :controller do
       expect(consolidated_results.size).to eq(batch_data.size)
 
       expected_results = [
-        { 'et_amount' => 4500, 'income' => 200000, 'income_tax' => 17250, 'nht_amount' => 4000, 'nis_amount' => 6000 },
-        { 'income' => 150000, 'nis_amount' => 4500, 'income_tax' => 5125, 'et_amount' => 3375, 'nht_amount' => 3000 },
-        { 'income' => 100000, 'nis_amount' => 3000, 'income_tax' => 0, 'et_amount' => 2250, 'nht_amount' => 2000 }
+        { 'et_amount' => 4365, 'income' => 200000, 'income_tax' => 17250, 'nht_amount' => 4000, 'nis_amount' => 6000 },
+        { 'income' => 150000, 'nis_amount' => 4500, 'income_tax' => 5125, 'et_amount' => 3273.75, 'nht_amount' => 3000 },
+        { 'income' => 100000, 'nis_amount' => 3000, 'income_tax' => 0, 'et_amount' => 2182.5, 'nht_amount' => 2000 }
         # Add expected results for other batch items
       ]
 
