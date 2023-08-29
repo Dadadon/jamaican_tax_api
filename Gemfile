@@ -7,7 +7,7 @@ ruby "3.2.2"
 gem "rails", "~> 7.0.6"
 
 # Use pg so api can be deployed to render
-gem 'pg'
+gem "sqlite3", "~> 1.4"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 

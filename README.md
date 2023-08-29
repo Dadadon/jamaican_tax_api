@@ -56,7 +56,7 @@ To get started with this project, follow these steps:
                     income_frequency (string): Frequency of income (weekly, fortnightly, monthly, annually).
                     tax_year (number): Tax year for calculations.
     Example Request:json
-                    POST /calculate/income-tax/batch
+                    POST /calculate/consolidated_taxes
                     {
                         "batch_data": [200000, 150000, 100000],
                         "income_frequency": "monthly",
